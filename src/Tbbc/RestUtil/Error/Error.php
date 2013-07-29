@@ -1,6 +1,6 @@
 <?php
 
-namespace Tbbc\RestUtil\Response\Error;
+namespace Tbbc\RestUtil\Error;
 
 
 class Error
@@ -41,7 +41,7 @@ class Error
     private $moreInforUrl;
 
 
-    public function __construct($status, $code, $message, $extendedMessage = null, $moreInfoUrl = null)
+    public function __construct($status, $code, $message, $moreInfoUrl = null, $extendedMessage = null)
     {
         if (null == $status) {
             throw new \InvalidArgumentException('Http status cannot be null.');

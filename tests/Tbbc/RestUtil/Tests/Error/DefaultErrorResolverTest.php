@@ -1,22 +1,22 @@
 <?php
 
-namespace Tbbc\RestUtil\Tests\Response;
+namespace Tbbc\RestUtil\Tests\Error;
 
 
-use Tbbc\RestUtil\Response\Error\DefaultErrorResolver;
-use Tbbc\RestUtil\Response\Error\ExceptionToErrorConverter;
-use Tbbc\RestUtil\Response\Error\Error;
+use Tbbc\RestUtil\Error\DefaultErrorResolver;
+use Tbbc\RestUtil\Error\ExceptionToErrorConverter;
+use Tbbc\RestUtil\Error\Error;
 use Tbbc\RestUtil\Response\HttpCodes;
 
 class DefaultErrorResolverTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Tbbc\RestUtil\Response\Error\ExceptionToErrorConverter
+     * @var \Tbbc\RestUtil\Error\ExceptionToErrorConverter
      */
     protected $exceptionToErrorConverter;
 
     /**
-     * @var \Tbbc\RestUtil\Response\Error\ErrorResolverInterface
+     * @var \Tbbc\RestUtil\Error\ErrorResolverInterface
      */
     protected $errorResolver;
 

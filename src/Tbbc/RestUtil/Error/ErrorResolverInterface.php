@@ -1,6 +1,6 @@
 <?php
 
-namespace Tbbc\RestUtil\Response\Error;
+namespace Tbbc\RestUtil\Error;
 
 interface ErrorResolverInterface
 {
