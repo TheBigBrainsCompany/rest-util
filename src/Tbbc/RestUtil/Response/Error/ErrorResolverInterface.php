@@ -2,12 +2,12 @@
 
 namespace Tbbc\RestUtil\Response\Error;
 
-interface RestErrorResolverInterface
+interface ErrorResolverInterface
 {
     /**
      * @param \Exception $exception
      *
-     * @return RestError
+     * @return Error
      */
     function resolveError(\Exception $exception);
 }

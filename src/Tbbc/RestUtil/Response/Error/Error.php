@@ -3,7 +3,7 @@
 namespace Tbbc\RestUtil\Response\Error;
 
 
-class RestError
+class Error
 {
     /**
      * Http status code

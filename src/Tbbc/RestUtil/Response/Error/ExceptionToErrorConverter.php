@@ -4,7 +4,7 @@ namespace Tbbc\RestUtil\Response\Error;
 
 use Tbbc\RestUtil\Response\HttpCodes;
 
-class ExceptionToRestErrorConverter
+class ExceptionToErrorConverter
 {
     private $map = array(
         'InvalidArgumentException' => array(
@@ -28,7 +28,7 @@ class ExceptionToRestErrorConverter
 
     /**
      * @param \Exception $e
-     * @return null|RestError
+     * @return null|Error
      */
     public function convert(\Exception $e)
     {
@@ -50,7 +50,7 @@ class ExceptionToRestErrorConverter
             }
         }
 
-        $error = new RestError($status, $this->createCode($mapping), $message, $extendedMessage, $moreInfoUrl);
+        $error = new Error($status, $this->createCode($mapping), $message, $extendedMessage, $moreInfoUrl);
 
         return $error;
     }
