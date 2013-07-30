@@ -1,0 +1,9 @@
+map:
+  - class: InvalidArgumentException
+    handler: default
+    errorCode: 2000
+    errorMessage: "Invalid argument provided"
+  - class: ResourceNotException
+    handler: default
+    errorCode: 2001
+    errorMessage: "The resource could not be found"

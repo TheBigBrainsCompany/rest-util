@@ -1,96 +1,36 @@
 <?php
+/**
+ * @author Boris Guéry <guery.b@gmail.com>
+ */
 
 namespace Tbbc\RestUtil\Error;
 
 
-class Error
+class Error implements ErrorInterface
 {
-    /**
-     * Http status code
-     *
-     * @var int
-     */
-    private $status;
+    protected $httpStatusCode;
+    protected $errorCode;
+    protected $errorMessage;
 
-    /**
-     * Api error code
-     *
-     * @var int
-     */
-    private $code;
-
-    /**
-     * Descriptive message of error
-     *
-     * @var string
-     */
-    private $message;
-
-    /**
-     * Additional information about the error
-     *
-     * @var string
-     */
-    private $extendedMessage;
-
-    /**
-     * Url for getting more info about the error
-     *
-     * @var string
-     */
-    private $moreInforUrl;
-
-
-    public function __construct($status, $code, $message, $moreInfoUrl = null, $extendedMessage = null)
+    public function __construct($httpStatusCode, $errorCode, $errorMessage)
     {
-        if (null == $status) {
-            throw new \InvalidArgumentException('Http status cannot be null.');
-        }
-
-        $this->status = $status;
-        $this->code = $code;
-        $this->message = $message;
-        $this->extendedMessage = $extendedMessage;
-        $this->moreInforUrl = $moreInfoUrl;
+        $this->httpStatusCode = $httpStatusCode;
+        $this->errorCode      = $errorCode;
+        $this->errorMessage   = $errorMessage;
     }
 
-    /**
-     * @return int
-     */
-    public function getCode()
+    public function getHttpStatusCode()
     {
-        return $this->code;
+        return $this->httpStatusCode;
     }
 
-    /**
-     * @return string
-     */
-    public function getMessage()
+    public function getErrorCode()
     {
-        return $this->message;
+        return $this->errorCode;
     }
 
-    /**
-     * @return string
-     */
-    public function getMoreInforUrl()
+    public function getErrorMessage()
     {
-        return $this->moreInforUrl;
+        return $this->errorMessage;
     }
-
-    /**
-     * @return int
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * @return string
-     */
-    public function getExtendedMessage()
-    {
-        return $this->extendedMessage;
-    }
-}
+} 
