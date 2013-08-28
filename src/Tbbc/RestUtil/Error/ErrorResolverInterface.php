@@ -1,13 +1,24 @@
 <?php
 
+/**
+ * This file is part of tbbc/rest-util
+ *
+ * (c) The Big Brains Company <contact@thebigbrainscompany.org>
+ *
+ */
+
 namespace Tbbc\RestUtil\Error;
 
+/**
+ * @author Benjamin Dulau <benjamin.dulau@gmail.com>
+ */
 interface ErrorResolverInterface
 {
     /**
-     * @param \Exception $exception
+     * Takes an \Exception and converts it into an ErrorInterface
      *
-     * @return Error
+     * @param \Exception $exception
+     * @return ErrorInterface
      */
-    function resolveError(\Exception $exception);
+    function resolve(\Exception $exception);
 }
