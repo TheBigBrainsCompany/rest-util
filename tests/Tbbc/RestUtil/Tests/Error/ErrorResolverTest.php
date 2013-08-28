@@ -1,7 +1,12 @@
 <?php
+
 /**
- * @author Boris Guéry <guery.b@gmail.com>
+ * This file is part of tbbc/rest-util
+ *
+ * (c) The Big Brains Company <contact@thebigbrainscompany.org>
+ *
  */
+
 
 namespace Tbbc\Error\Mapping\Loader;
 
@@ -11,6 +16,9 @@ use Tbbc\RestUtil\Error\ErrorResolver;
 use Tbbc\RestUtil\Error\Mapping\ExceptionMap;
 use Tbbc\RestUtil\Error\Mapping\ExceptionMapping;
 
+/**
+ * @author Boris Guéry <guery.b@gmail.com>
+ */
 class ErrorResolverTest extends \PHPUnit_Framework_TestCase
 {
     public function testResolveWithDefaultErrorFactory()
