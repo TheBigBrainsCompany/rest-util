@@ -1,6 +1,10 @@
 <?php
+
 /**
- * @author Boris Guéry <guery.b@gmail.com>
+ * This file is part of tbbc/rest-util
+ *
+ * (c) The Big Brains Company <contact@thebigbrainscompany.org>
+ *
  */
 
 namespace Tbbc\RestUtil\Error\Mapping\Loader;
@@ -10,6 +14,9 @@ use Symfony\Component\Yaml\Parser as YamlParser;
 use Tbbc\RestUtil\Error\Exception\InvalidResourceException;
 use Tbbc\RestUtil\Error\Exception\NotFoundResourceException;
 
+/**
+ * @author Boris Guéry <guery.b@gmail.com>
+ */
 class YamlLoader
 {
     public function load($resource)

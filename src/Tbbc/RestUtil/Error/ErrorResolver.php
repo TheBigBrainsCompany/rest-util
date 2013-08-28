@@ -1,6 +1,10 @@
 <?php
+
 /**
- * @author Boris Guéry <guery.b@gmail.com>
+ * This file is part of tbbc/rest-util
+ *
+ * (c) The Big Brains Company <contact@thebigbrainscompany.org>
+ *
  */
 
 namespace Tbbc\RestUtil\Error;
@@ -8,6 +12,9 @@ namespace Tbbc\RestUtil\Error;
 use Tbbc\RestUtil\Error\Exception\NotFoundExceptionMappingException;
 use Tbbc\RestUtil\Error\Mapping\ExceptionMap;
 
+/**
+ * @author Boris Guéry <guery.b@gmail.com>
+ */
 class ErrorResolver
 {
     /**
