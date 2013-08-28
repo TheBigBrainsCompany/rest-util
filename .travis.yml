@@ -12,3 +12,4 @@ script: phpunit --coverage-text
 notifications:
   email:
     - benjamin.dulau@gmail.com
+    - guery.b@gmail.com
