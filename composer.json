@@ -8,6 +8,11 @@
         {
             "name":     "Benjamin Dulau",
             "email":    "benjamin.dulau@gmail.com"
+        },
+        {
+            "name":     "Boris Guéry",
+            "email":    "guery.b@gmail.com",
+            "homepage": "http://borisguery.com"
         }
     ],
     "require": {
@@ -18,6 +23,10 @@
     },
     "autoload": {
         "psr-0": { "Tbbc\\RestUtil\\": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
-
