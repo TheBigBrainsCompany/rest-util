@@ -64,7 +64,7 @@ $errorResolver = new ErrorResolver($exceptionMap);
 $defaultErrorFactory = new DefaultErrorFactory();
 $errorResolver->registerFactory($defaultErrorFactory);
 
-// Resolve error !
+// Resolve error!
 $exception = new \InvalidArgumentException('This is an invalid argument exception');
 $error = $errorResolver->resolve($exception);
 
@@ -122,8 +122,8 @@ Requirements
 Authors
 -------
 
-Boris Guéry - guery.b@gmail.com - http://borisguery.com
-Benjamin Dulau - benjamin.dulau@gmail.com
+* Boris Guéry - guery.b@gmail.com - http://borisguery.com
+* Benjamin Dulau - benjamin.dulau@gmail.com
 
 
 License
