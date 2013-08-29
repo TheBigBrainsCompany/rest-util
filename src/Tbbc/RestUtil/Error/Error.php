@@ -70,4 +70,18 @@ class Error implements ErrorInterface
     {
         return $this->errorMoreInfoUrl;
     }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return array(
+            'http_status_code' => $this->getHttpStatusCode(),
+            'code' => $this->getErrorCode(),
+            'message' => $this->getErrorMessage(),
+            'extended_message' => $this->getErrorExtendedMessage(),
+            'more_info_url' => $this->getErrorMoreInfoUrl(),
+        );
+    }
 } 

@@ -53,4 +53,11 @@ interface ErrorInterface
      * @return string
      */
     function getErrorMoreInfoUrl();
+
+    /**
+     * Returns a normalized array version of the Error
+     *
+     * @return array
+     */
+    function toArray();
 } 

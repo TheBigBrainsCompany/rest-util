@@ -7,8 +7,7 @@
  *
  */
 
-
-namespace Tbbc\Error\Mapping\Loader;
+namespace Tbbc\RestUtil\Tests\Error;
 
 use Tbbc\RestUtil\Error\DefaultErrorFactory;
 use Tbbc\RestUtil\Error\Error;

@@ -8,7 +8,7 @@
  */
 
 
-namespace Tbbc\Error\Mapping\Loader;
+namespace Tbbc\RestUtil\Tests\Error\Mapping\Loader;
 
 use Tbbc\RestUtil\Error\Mapping\Loader\YamlLoader;
 
