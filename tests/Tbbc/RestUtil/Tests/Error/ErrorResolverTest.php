@@ -10,6 +10,7 @@
 
 namespace Tbbc\Error\Mapping\Loader;
 
+use Tbbc\RestUtil\Error\DefaultErrorFactory;
 use Tbbc\RestUtil\Error\Error;
 use Tbbc\RestUtil\Error\ErrorFactoryInterface;
 use Tbbc\RestUtil\Error\ErrorResolver;
@@ -25,6 +26,7 @@ class ErrorResolverTest extends \PHPUnit_Framework_TestCase
     public function testResolveWithDefaultErrorFactory()
     {
         $resolver = new ErrorResolver($this->getExceptionMap());
+        $resolver->registerFactory(new DefaultErrorFactory());
 
         $error = $resolver->resolve(new \RuntimeException('Runtime exceptionnnn!!!'));
 
@@ -35,6 +37,7 @@ class ErrorResolverTest extends \PHPUnit_Framework_TestCase
     public function testResolveWithCustomErrorFactory()
     {
         $resolver = new ErrorResolver($this->getExceptionMap());
+        $resolver->registerFactory(new DefaultErrorFactory());
         $resolver->registerFactory(new CustomErrorFactory());
 
         $error = $resolver->resolve(new \InvalidArgumentException());

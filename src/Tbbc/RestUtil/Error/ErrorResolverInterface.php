@@ -18,7 +18,7 @@ interface ErrorResolverInterface
      * Takes an \Exception and converts it into an ErrorInterface
      *
      * @param \Exception $exception
-     * @return ErrorInterface
+     * @return ErrorInterface|null Returns null if no error factory supports the given exception
      */
     function resolve(\Exception $exception);
 }

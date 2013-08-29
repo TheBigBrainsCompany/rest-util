@@ -15,7 +15,7 @@ use Tbbc\RestUtil\Error\Mapping\ExceptionMap;
 /**
  * @author Boris Guéry <guery.b@gmail.com>
  */
-class ErrorResolver
+class ErrorResolver implements ErrorResolverInterface
 {
     /**
      * @var ErrorFactoryInterface[]
@@ -37,10 +37,7 @@ class ErrorResolver
                 return $this->errorFactories[$mapping->getErrorFactoryIdentifier()]->createError($exception, $mapping);
             }
 
-            $factory = new DefaultErrorFactory();
-
-            return $factory->createError($exception, $mapping);
-
+            return null;
         } catch (NotFoundExceptionMappingException $e) {
             // Silently ignore non-mapped exception
         }
