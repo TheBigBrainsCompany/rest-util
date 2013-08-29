@@ -44,50 +44,70 @@ Usage
 
 Converting Exception into Error object:
 
+1\. First you have to define an `ExceptionMapping`, for the sake of the example, 
+   we use `PHP`, but a `YamlLoader` is also available:
+
 ```php
 // Exception mapping configuration
 $invalidArgumentExceptionMapping = new ExceptionMapping(array(
-    'exceptionClassName' => '\InvalidArgumentException',
-    'factory' => 'default',
-    'httpStatusCode' => 400,
-    'errorCode' => 400101,
-    'errorMessage' => null,
+    'exceptionClassName'   => '\InvalidArgumentException',
+    'factory'              => 'default',
+    'httpStatusCode'       => 400,
+    'errorCode'            => 400101,
+    'errorMessage'         => null,
     'errorExtendedMessage' => 'Extended message',
-    'errorMoreInfoUrl' => 'http://api.my.tld/doc/error/400101',
+    'errorMoreInfoUrl'     => 'http://api.my.tld/doc/error/400101',
 ));
 
+```
+
+2\. The `ExceptionMapping` must be added to `ExceptionMap`:
+
+```php
 $exceptionMap = new ExceptionMap();
 $exceptionMap->add($invalidArgumentExceptionMapping);
+```
 
+3\. We plug the `ErrorResolver` with an ErrorFactory, a `DefaultErrorFactory` is bundled within the lib:
+
+```php
 // Error resolver initialization
-$errorResolver = new ErrorResolver($exceptionMap);
+$errorResolver       = new ErrorResolver($exceptionMap);
 $defaultErrorFactory = new DefaultErrorFactory();
 $errorResolver->registerFactory($defaultErrorFactory);
+```
 
-// Resolve error!
+4\. Resolve error!
+
+```php
 $exception = new \InvalidArgumentException('This is an invalid argument exception');
-$error = $errorResolver->resolve($exception);
+$error     = $errorResolver->resolve($exception);
+```
 
+5\. The `$error` variable is now assigned an `ErrorInterface` object which implements a `toArray()` method
+   to allow easy serialization method of your choice:
+
+```php
 print_r($error->toArray());
 /* will output
 Array
 (
     [http_status_code] => 400
-    [code] => 400101
-    [message] => This is an invalid argument exception.
+    [code]             => 400101
+    [message]          => This is an invalid argument exception.
     [extended_message] => Extended message
-    [more_info_url] => http://api.my.tld/doc/error/400101
+    [more_info_url]    => http://api.my.tld/doc/error/400101
 )
 */
 
 echo json_encode($error->toArray());
 /* And voilà! You get a ready to use json normalized error response body
 {
-    "http_status_code":400,
-    "code":400101,
-    "message":"This is an invalid argument exception.",
-    "extended_message":"Extended message",
-    "more_info_url":"http:\/\/api.my.tld\/doc\/error\/400101"
+    "http_status_code": 400,
+    "code":             400101,
+    "message":          "This is an invalid argument exception.",
+    "extended_message": "Extended message",
+    "more_info_url":    "http:\/\/api.my.tld\/doc\/error\/400101"
 }
 */
 ```
