@@ -23,7 +23,12 @@ class DefaultErrorFactory implements ErrorFactoryInterface
 
     public function createError(\Exception $exception, ExceptionMappingInterface $mapping)
     {
-        return new Error($mapping->getHttpStatusCode(), $mapping->getErrorCode(), $mapping->getErrorMessage(),
+        $errorMessage = $mapping->getErrorMessage();
+        if (empty($errorMessage)) {
+            $errorMessage = $exception->getMessage();
+        }
+
+        return new Error($mapping->getHttpStatusCode(), $mapping->getErrorCode(), $errorMessage,
             $mapping->getErrorExtendedMessage(), $mapping->getErrorMoreInfoUrl());
     }
 }
