@@ -14,6 +14,7 @@ use Tbbc\RestUtil\Error\Mapping\ExceptionMap;
 
 /**
  * @author Boris Guéry <guery.b@gmail.com>
+ * @author Benjamin Dulau <benjamin.dulau@gmail.com>
  */
 class ErrorResolver implements ErrorResolverInterface
 {

@@ -14,6 +14,7 @@ use Tbbc\RestUtil\Error\Mapping\Loader\YamlLoader;
 
 /**
  * @author Boris Guéry <guery.b@gmail.com>
+ * @author Benjamin Dulau <benjamin.dulau@gmail.com>
  */
 class YamlLoaderTest extends \PHPUnit_Framework_TestCase
 {

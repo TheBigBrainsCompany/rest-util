@@ -13,6 +13,7 @@ use Tbbc\RestUtil\Error\Mapping\ExceptionMappingInterface;
 
 /**
  * @author Boris Guéry <guery.b@gmail.com>
+ * @author Benjamin Dulau <benjamin.dulau@gmail.com>
  */
 class DefaultErrorFactory implements ErrorFactoryInterface
 {
