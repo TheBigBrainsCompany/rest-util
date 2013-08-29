@@ -3,7 +3,14 @@ map:
     handler: default
     errorCode: 2000
     errorMessage: "Invalid argument provided"
+    errorExtendedMessage: "This is a more extended message for this InvalidArgumentException"
+    errorMoreInfoUrl: "http://api.my.tld/error/2000"
   - class: ResourceNotException
     handler: default
     errorCode: 2001
     errorMessage: "The resource could not be found"
+    errorExtendedMessage:
+        message1: "Extended message 1"
+        message2: "Extended message 2"
+    errorMoreInfoUrl: "http://api.my.tld/error/2001"
+

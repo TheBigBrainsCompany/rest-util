@@ -32,6 +32,8 @@ class YamlLoaderTest extends \PHPUnit_Framework_TestCase
                         'handler' => 'default',
                         'errorCode' => 2000,
                         'errorMessage' => 'Invalid argument provided',
+                        'errorExtendedMessage' => 'This is a more extended message for this InvalidArgumentException',
+                        'errorMoreInfoUrl' => 'http://api.my.tld/error/2000',
                     ),
                     1 =>
                     array (
@@ -39,6 +41,11 @@ class YamlLoaderTest extends \PHPUnit_Framework_TestCase
                         'handler' => 'default',
                         'errorCode' => 2001,
                         'errorMessage' => 'The resource could not be found',
+                        'errorExtendedMessage' => array(
+                            'message1' => 'Extended message 1',
+                            'message2' => 'Extended message 2'
+                        ),
+                        'errorMoreInfoUrl' => 'http://api.my.tld/error/2001',
                     ),
                 ),
             ),

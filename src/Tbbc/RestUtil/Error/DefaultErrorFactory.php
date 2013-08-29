@@ -9,7 +9,7 @@
 
 namespace Tbbc\RestUtil\Error;
 
-use Tbbc\RestUtil\Error\Mapping\ExceptionMapping;
+use Tbbc\RestUtil\Error\Mapping\ExceptionMappingInterface;
 
 /**
  * @author Boris Guéry <guery.b@gmail.com>
@@ -21,8 +21,9 @@ class DefaultErrorFactory implements ErrorFactoryInterface
         return '__DEFAULT__';
     }
 
-    public function createError(\Exception $exception, ExceptionMapping $mapping)
+    public function createError(\Exception $exception, ExceptionMappingInterface $mapping)
     {
-        return new Error($mapping->getHttpStatusCode(), $mapping->errorCode, $mapping->errorMessage);
+        return new Error($mapping->getHttpStatusCode(), $mapping->getErrorCode(), $mapping->getErrorMessage(),
+            $mapping->getErrorExtendedMessage(), $mapping->getErrorMoreInfoUrl());
     }
 }
