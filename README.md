@@ -1,6 +1,7 @@
 The Big Brains Company - Rest Util
 ==============
 [![Build Status](https://travis-ci.org/TheBigBrainsCompany/rest-util.png?branch=master)](https://travis-ci.org/TheBigBrainsCompany/rest-util)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/TheBigBrainsCompany/rest-util/badges/quality-score.png?s=258f15e1c04310af5bfae4ee55a05115a9f857f7)](https://scrutinizer-ci.com/g/TheBigBrainsCompany/rest-util/)
 
 Rest util library for PHP.
 
