@@ -151,3 +151,5 @@ License
 -------
 
 `The Big Brains Company - Rest Util` is licensed under the MIT License - see the LICENSE file for details
+
+[![The Big Brains Company - Logo](http://tbbc-valid.thebigbrainscompany.com/assets/images/logo-tbbc.png)](http://thebigbrainscompany.com)
