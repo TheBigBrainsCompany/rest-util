@@ -29,7 +29,7 @@ class ErrorResolver implements ErrorResolverInterface
         $this->map = $map;
     }
 
-    public function resolve(\Exception $exception)
+    public function resolve(\Throwable $exception)
     {
         try {
             $mapping = $this->map->getMapping($exception);
