@@ -22,7 +22,7 @@ class DefaultErrorFactory implements ErrorFactoryInterface
         return '__DEFAULT__';
     }
 
-    public function createError(\Exception $exception, ExceptionMappingInterface $mapping)
+    public function createError(\Throwable $exception, ExceptionMappingInterface $mapping)
     {
         $errorMessage = $mapping->getErrorMessage();
         if (empty($errorMessage)) {

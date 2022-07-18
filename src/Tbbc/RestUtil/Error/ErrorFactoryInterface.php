@@ -27,9 +27,9 @@ interface ErrorFactoryInterface
     /**
      * Returns the Error created from the given Exception
      *
-     * @param \Exception                $exception
+     * @param \Throwable                $exception
      * @param ExceptionMappingInterface $mapping
      * @return ErrorInterface
      */
-    function createError(\Exception $exception, ExceptionMappingInterface $mapping);
+    function createError(\Throwable $exception, ExceptionMappingInterface $mapping);
 }

@@ -33,7 +33,7 @@ class ExceptionMap implements \Iterator
         }
     }
 
-    public function getMapping(\Exception $exception)
+    public function getMapping(\Throwable $exception)
     {
         foreach ($this->map as $mapping) {
             if (get_class($exception) === $mapping->getExceptionClassName()) {
